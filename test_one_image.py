@@ -118,13 +118,13 @@ while(num_epoch==3):
             result =sess.run(fusion_image,feed_dict={images_ir: train_data_ir,images_vi: train_data_vi})
             result=result*127.5+127.5
             result = result.squeeze()
-            image_path = os.path.join(os.getcwd(), 'result','epoch'+str(num_epoch))
+            image_path = os.path.join(os.getcwd(), 'result')
             if not os.path.exists(image_path):
                 os.makedirs(image_path)
             if i<=9:
-                image_path = os.path.join(image_path,'F9_0'+str(i)+".bmp")
+                image_path = os.path.join(image_path,'Fusion_0'+str(i)+".bmp")
             else:
-                image_path = os.path.join(image_path,'F9_'+str(i)+".bmp")
+                image_path = os.path.join(image_path,'Fusion_'+str(i)+".bmp")
             end=time.time()
             # print(out.shape)
             imsave(result, image_path)

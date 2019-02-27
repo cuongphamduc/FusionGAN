@@ -147,7 +147,7 @@ def input_setup(sess,config,data_dir,index=0):
   padding = abs(config.image_size - config.label_size) / 2 # 6
 
   if config.is_train:
-    for i in xrange(len(data)):
+    for i in range(len(data)):
       #input_, label_ = preprocess(data[i], config.scale)
       input_=(imread(data[i])-127.5)/127.5
       label_=input_
